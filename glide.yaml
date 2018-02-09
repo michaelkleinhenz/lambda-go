@@ -1,0 +1,3 @@
+package: lambda-go
+import:
+- package: github.com/aws/aws-lambda-go/lambda
