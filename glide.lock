@@ -1,5 +1,5 @@
 hash: 8cfb6aa8b453d8983ec003c41c85c2042f3bf2bd54a061ea04a4b7cf7f99a778
-updated: 2018-02-08T16:35:39.200700091-05:00
+updated: 2018-02-13T11:29:08.826748233-05:00
 imports:
 - name: github.com/aws/aws-lambda-go
   version: 68fa387b6b7a7ff2a0dd6dacb17f5e713135d64d
@@ -7,38 +7,4 @@ imports:
   - lambda
   - lambda/messages
   - lambdacontext
-- name: github.com/aws/aws-sdk-go
-  version: 9d2e2c90e5b140adba893bf0ffaaef7c3c891207
-  subpackages:
-  - aws
-  - aws/awserr
-  - aws/awsutil
-  - aws/client
-  - aws/client/metadata
-  - aws/corehandlers
-  - aws/credentials
-  - aws/credentials/ec2rolecreds
-  - aws/credentials/endpointcreds
-  - aws/credentials/stscreds
-  - aws/defaults
-  - aws/ec2metadata
-  - aws/endpoints
-  - aws/request
-  - aws/session
-  - aws/signer/v4
-  - internal/shareddefaults
-  - private/protocol
-  - private/protocol/json/jsonutil
-  - private/protocol/jsonrpc
-  - private/protocol/query
-  - private/protocol/query/queryutil
-  - private/protocol/rest
-  - private/protocol/xml/xmlutil
-  - service/dynamodb
-  - service/dynamodb/dynamodbattribute
-  - service/sts
-- name: github.com/go-ini/ini
-  version: 32e4c1e6bc4e7d0d8451aa6b75200d19e37a536a
-- name: github.com/jmespath/go-jmespath
-  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
 testImports: []
