@@ -28,6 +28,7 @@ $(GOMETALINTER): ; $(info $(M) getting gometalinter…)
 
 vendor: $(GLIDE) ; $(info $(M) getting dependencies…)
 	$Q $(BIN_DIR)/glide update
+	$Q $(BIN_DIR)/glide install
 
 .PHONY: test
 test: vendor lint ; $(info $(M) testing…)
@@ -35,11 +36,11 @@ test: vendor lint ; $(info $(M) testing…)
 
 .PHONY: lint
 lint: $(GOMETALINTER) ; $(info $(M) linting…)
-	$Q $(GOMETALINTER) ./... --vendor
+	$Q $(GOMETALINTER) --vendor --disable gotype ./...
 
 .PHONY: build
 build: vendor lint test ; $(info $(M) building…)
-	$Q GOOS=$(os) GOARCH=amd64 go build -o bin/$(BINARY)
+	$Q GOOS=linux GOARCH=amd64 go build -o bin/$(BINARY)
 
 .PHONY: package
 package: build ; $(info $(M) packaging…)
