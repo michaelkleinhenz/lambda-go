@@ -47,7 +47,7 @@ package: build ; $(info $(M) packaging…)
 	$Q mkdir -p deploy && cd bin && zip -q ../deploy/main.zip main
 
 .PHONY: deploy
-deploy: package ; $(info $(M) deploying…)
+deploy: ; $(info $(M) deploying…)
 	$Q aws lambda update-function-code --function-name lambda-go --zip-file fileb://deploy/main.zip --region us-east-1
 
 .PHONY: clean
