@@ -16,13 +16,18 @@ BIN_DIR := $(GOPATH)/bin
 all: vendor lint test build package
 	@echo Building is done, run \"make deploy\" to deploy to AWS.
 
+GLIDE := $(BIN_DIR)/glide
+$(GLIDE): ; $(info $(M) getting glide)
+	$Q go get -u github.com/Masterminds/glide
+	$Q $(BIN_DIR)/glide install
+
 GOMETALINTER := $(BIN_DIR)/gometalinter
 $(GOMETALINTER): ; $(info $(M) getting gometalinter…)
 	$Q go get -u github.com/alecthomas/gometalinter
 	$Q $(BIN_DIR)/gometalinter --install
 
-vendor: ; $(info $(M) getting dependencies…)
-	$Q glide update
+vendor: $(GLIDE) ; $(info $(M) getting dependencies…)
+	$Q $(BIN_DIR)/glide update
 
 .PHONY: test
 test: vendor lint ; $(info $(M) testing…)
