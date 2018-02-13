@@ -1,3 +1,6 @@
 language: go
 go:
   - 1.7.x
+deploy:
+  provider: script
+  script: make deploy
