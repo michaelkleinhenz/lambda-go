@@ -36,7 +36,7 @@ test: vendor lint ; $(info $(M) testing…)
 
 .PHONY: lint
 lint: $(GOMETALINTER) ; $(info $(M) linting…)
-	$Q $(GOMETALINTER) --vendor --disable gotype ./...
+	$Q $(GOMETALINTER) --vendor --disable gotype --deadline=90s ./...
 
 .PHONY: build
 build: vendor lint test ; $(info $(M) building…)
